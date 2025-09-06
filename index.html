@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcadeX - Mini Games Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+    <!-- Header -->
+    <header class="glass m-4 p-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center"><img
+                            src="photos/a black and white themed logo for a mini game collection website ArcadeX.jpg"
+                            alt="icon" class="w-10 h-10 rounded-lg"></div>
+                    <div>
+                        <h1 class="text-2xl font-bold" style="color: var(--text-primary);">ArcadeX</h1>
+                        <p class="text-sm" style="color: var(--text-secondary);">Mini Games Collection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" onclick="toggleTheme()" class="btn-secondary">
+                    <i id="theme-icon" class="fas fa-sun"></i>
+                </button>
+                <button onclick="showHome()" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="game-container active">
+        <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Tic-Tac-Toe -->
+            <div class="game-card glass p-4">
+                <img src="photos/Neave Interactive.jpg" alt="Tic-Tac-Toe"
+                    class="w-full h-55 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Tic-Tac-Toe</h3>
+                <p class="text-sm opacity-70 mb-4">Classic X vs O game. Single or two-player mode available</p>
+                <button onclick="startGame('tic-tac-toe')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Snake Game -->
+            <div class="game-card glass p-4">
+                <img src="photos/black and white app icon.jpg" alt="Snake Game"
+                    class="w-full h-55 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Grow Your Snake</h3>
+                <p class="text-sm opacity-70 mb-4">Control the snake to eat food and grow longer without hitting walls
+                </p>
+                <button onclick="startGame('snake')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Memory Match -->
+            <div class="game-card glass p-4">
+                <img src="photos/rafe visconti | sa.jpg" alt="Memory Match"
+                    class="w-full h-55 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Memory Match</h3>
+                <p class="text-sm opacity-70 mb-4">Flip cards to find matching pairs and test your memory skills</p>
+                <button onclick="startGame('memory')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Flappy Bird -->
+            <div class="game-card glass p-4">
+                <img src="photos/polarr logo.jpg" alt="Bouncy Ball" class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Bouncy Ball</h3>
+                <p class="text-sm opacity-70 mb-4">Navigate through pipes by clicking to flap your wings</p>
+                <button onclick="startGame('flappy')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Click Speed Test -->
+            <div class="game-card glass p-4">
+                <img src="photos/Computer Mouse Cursor [No background].jpg" alt="Click Speed Test"
+                    class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Click Speed Test</h3>
+                <p class="text-sm opacity-70 mb-4">Test how fast you can click in 10 seconds</p>
+                <button onclick="startGame('click-test')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Whack A Mole -->
+            <div class="game-card glass p-4">
+                <img src="photos/Cre_ 微末壁纸 (微博）.jpg" alt="Whack A Mole"
+                    class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Whack A Mole</h3>
+                <p class="text-sm opacity-70 mb-4">Hit the moles as they pop up from their holes</p>
+                <button onclick="startGame('whack-mole')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- 2048 -->
+            <div class="game-card glass p-4">
+                <img src="photos/2048 game.jpg" alt="2048 Game" class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">2048</h3>
+                <p class="text-sm opacity-70 mb-4">Slide tiles to combine numbers and reach the 2048 tile</p>
+                <button onclick="startGame('2048')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Sliding Puzzle -->
+            <div class="game-card glass p-4">
+                <img src="photos/sudoku black.jpg" alt="Sliding Puzzle"
+                    class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Sliding Puzzle</h3>
+                <p class="text-sm opacity-70 mb-4">Arrange numbered tiles in order by sliding them</p>
+                <button onclick="startGame('sliding-puzzle')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Sudoku -->
+            <div class="game-card glass p-4">
+                <img src="photos/Sudoku Game app.jpg" alt="Sudoku" class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Sudoku</h3>
+                <p class="text-sm opacity-70 mb-4">Fill the 9x9 grid with numbers 1-9 following the rules</p>
+                <button onclick="startGame('sudoku')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Rock Paper Scissors -->
+            <div class="game-card glass p-4">
+                <img src="photos/Rock Paper Scissor Icon.jpg" alt="Rock Paper Scissors"
+                    class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Rock Paper Scissors</h3>
+                <p class="text-sm opacity-70 mb-4">Classic hand game against the computer</p>
+                <button onclick="startGame('rock-paper-scissors')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Guess the Number -->
+            <div class="game-card glass p-4">
+                <img src="photos/White question marks falling down on black background.jpg" alt="Guess the Number"
+                    class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Guess the Number</h3>
+                <p class="text-sm opacity-70 mb-4">Guess the secret number between 1-100 with hints</p>
+                <button onclick="startGame('guess-number')" class="btn w-full mb-2">Play Game</button>
+            </div>
+
+            <!-- Color Match -->
+            <div class="game-card glass p-4">
+                <img src="photos/чб актуальные.jpg" alt="Color Match" class="w-full h-80 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold mb-2 text-center">Color Match</h3>
+                <p class="text-sm opacity-70 mb-4">Watch the color sequence and repeat it back</p>
+                <button onclick="startGame('color-match')" class="btn w-full mb-2">Play Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tic-Tac-Toe Game -->
+    <div id="tic-tac-toe-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Tic-Tac-Toe</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="mb-4">
+                        <button id="single-player-btn" onclick="setGameMode('single')" class="btn mr-4">Single
+                            Player</button>
+                        <button id="two-player-btn" onclick="setGameMode('two')" class="btn-secondary">Two
+                            Player</button>
+                    </div>
+                    <div class="text-lg mb-2">Current Player: <span id="current-player" class="font-bold">X</span></div>
+                    <div class="text-lg mb-4">Score: <span id="tic-score">X: 0 | O: 0</span></div>
+                </div>
+
+                <div id="tic-tac-toe-board" class="tic-tac-toe-board mb-6"></div>
+
+                <div class="text-center">
+                    <button onclick="resetTicTacToe()" class="btn mr-4">Reset Game</button>
+                    <button onclick="clearTicTacToeScore()" class="btn-secondary">Clear Score</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Snake Game -->
+    <div id="snake-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Snake Game</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="snake-score">0</div>
+                            <div class="text-sm opacity-70">Score</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="snake-high-score">0</div>
+                            <div class="text-sm opacity-70">High Score</div>
+                        </div>
+                        <div>
+                            <button id="snake-start-btn" onclick="startSnakeGame()" class="btn">Start Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="snake-board" class="snake-board mb-6"></div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70 mb-4">Use WASD or Arrow Keys to control</div>
+                    <button onclick="pauseSnakeGame()" class="btn-secondary mr-4">Pause</button>
+                    <button onclick="resetSnakeGame()" class="btn-secondary">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Game -->
+    <div id="memory-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Memory Match</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="memory-time">00:00</div>
+                            <div class="text-sm opacity-70">Time</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="memory-moves">0</div>
+                            <div class="text-sm opacity-70">Moves</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="memory-matches">0/8</div>
+                            <div class="text-sm opacity-70">Matches</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="memory-board" class="memory-board mb-6"></div>
+
+                <div class="text-center">
+                    <button onclick="startMemoryGame()" class="btn mr-4">New Game</button>
+                    <button onclick="showMemoryHint()" class="btn-secondary">Hint (2s)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flappy Bird Game -->
+    <div id="flappy-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Flappy Bird</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="flappy-score">0</div>
+                            <div class="text-sm opacity-70">Score</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="flappy-best">0</div>
+                            <div class="text-sm opacity-70">Best</div>
+                        </div>
+                        <div>
+                            <button id="flappy-start-btn" onclick="startFlappyGame()" class="btn">Start Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="flappy-board" class="flappy-board mb-6">
+                    <div id="flappy-bird" class="flappy-bird" style="left: 50px; top: 300px;"></div>
+                </div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70 mb-4">Click or press Space to flap</div>
+                    <button onclick="resetFlappyGame()" class="btn-secondary">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Click Speed Test -->
+    <div id="click-test-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Click Speed Test</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="click-count">0</div>
+                            <div class="text-sm opacity-70">Clicks</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="click-time">10</div>
+                            <div class="text-sm opacity-70">Time Left</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="click-cps">0.0</div>
+                            <div class="text-sm opacity-70">CPS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="click-area" class="click-test-area mb-6">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">👆</div>
+                        <div class="text-2xl font-bold">Click to Start!</div>
+                        <div class="opacity-70 mt-2">Click as fast as you can for 10 seconds</div>
+                    </div>
+                </div>
+
+                <div id="click-results" class="text-center hidden">
+                    <div class="glass p-4 mb-4">
+                        <h3 class="text-xl font-bold mb-2">Results</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <div class="text-2xl font-bold" id="final-clicks">0</div>
+                                <div class="text-sm opacity-70">Total Clicks</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold" id="final-cps">0.0</div>
+                                <div class="text-sm opacity-70">Clicks/Second</div>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold" id="click-rating">-</div>
+                                <div class="text-sm opacity-70">Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="resetClickTest()" class="btn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Whack A Mole Game -->
+    <div id="whack-mole-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Whack A Mole</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="whack-score">0</div>
+                            <div class="text-sm opacity-70">Score</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="whack-time">30</div>
+                            <div class="text-sm opacity-70">Time Left</div>
+                        </div>
+                        <div>
+                            <button id="whack-start-btn" onclick="startWhackMole()" class="btn">Start Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="whack-board" class="whack-board mb-6"></div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70 mb-4">Hit the moles when they pop up!</div>
+                    <button onclick="resetWhackMole()" class="btn-secondary">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2048 Game -->
+    <div id="2048-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">2048</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="2048-score">0</div>
+                            <div class="text-sm opacity-70">Score</div>
+                        </div>
+                        <div>
+                            <button onclick="start2048Game()" class="btn">New Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="2048-board" class="puzzle-2048-board mb-6"></div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70 mb-4">Use Arrow Keys to move tiles</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Puzzle -->
+    <div id="sliding-puzzle-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Sliding Puzzle</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="sliding-moves">0</div>
+                            <div class="text-sm opacity-70">Moves</div>
+                        </div>
+                        <div>
+                            <button onclick="initSlidingPuzzle()" class="btn">New Puzzle</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sliding-puzzle-board" class="sliding-puzzle-board mb-6"></div>
+
+                <div class="text-center">
+                    <button onclick="solveSlidingPuzzle()" class="btn-secondary">Solve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sudoku -->
+    <div id="sudoku-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Sudoku</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="sudoku-mistakes">0</div>
+                            <div class="text-sm opacity-70">Mistakes</div>
+                        </div>
+                        <div>
+                            <button onclick="initSudoku()" class="btn">New Puzzle</button>
+                        </div>
+                        <div>
+                            <button onclick="setSudokuDifficulty('hard')" class="btn-secondary">Hard Mode</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sudoku-board" class="sudoku-board mb-6"></div>
+
+                <div class="text-center">
+                    <button onclick="solveSudoku()" class="btn-secondary">Solve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rock Paper Scissors -->
+    <div id="rock-paper-scissors-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Rock Paper Scissors</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <div class="text-2xl font-bold" id="rps-player-score">0</div>
+                            <div class="text-sm opacity-70">You</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="rps-ties">0</div>
+                            <div class="text-sm opacity-70">Ties</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold" id="rps-ai-score">0</div>
+                            <div class="text-sm opacity-70">AI</div>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 mb-6">
+                        <div class="grid grid-cols-2 gap-8 mb-4">
+                            <div class="text-center">
+                                <div class="text-6xl mb-2" id="player-choice">❓</div>
+                                <div class="text-sm opacity-70">You</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-6xl mb-2" id="ai-choice">❓</div>
+                                <div class="text-sm opacity-70">AI</div>
+                            </div>
+                        </div>
+                        <div class="text-xl font-bold" id="rps-result">Make your choice!</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <button onclick="playRPS('rock')" class="btn text-2xl py-4">🪨</button>
+                        <button onclick="playRPS('paper')" class="btn text-2xl py-4">📄</button>
+                        <button onclick="playRPS('scissors')" class="btn text-2xl py-4">✂️</button>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="resetRPS()" class="btn-secondary">Reset Score</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guess the Number -->
+    <div id="guess-number-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Guess the Number</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <div class="text-2xl font-bold" id="guess-attempts">0</div>
+                            <div class="text-sm opacity-70">Attempts</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold">1-100</div>
+                            <div class="text-sm opacity-70">Range</div>
+                        </div>
+                        <div>
+                            <button onclick="startGuessGame()" class="btn">New Game</button>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 mb-6">
+                        <div class="text-xl font-bold mb-4" id="guess-hint">Make your first guess!</div>
+                        <div class="flex gap-4 justify-center">
+                            <input type="number" id="guess-input" min="1" max="100"
+                                class="px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-600 w-32 text-center"
+                                placeholder="1-100">
+                            <button onclick="makeGuess()" class="btn">Guess</button>
+                        </div>
+                    </div>
+
+                    <div class="glass p-4">
+                        <h3 class="text-lg font-bold mb-2">Guess History</h3>
+                        <div id="guess-history" class="space-y-1 max-h-32 overflow-y-auto">
+                            <div class="opacity-70 text-center">No guesses yet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Match Game -->
+    <div id="color-match-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Color Match</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="text-2xl font-bold mb-4">Level: <span id="color-level">1</span></div>
+                    <div class="text-lg mb-6" id="color-instruction">Watch the sequence and repeat it!</div>
+
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <button onclick="colorClicked('red')" class="btn text-2xl py-8"
+                            style="background: #ef4444;">🔴</button>
+                        <button onclick="colorClicked('blue')" class="btn text-2xl py-8"
+                            style="background: #3b82f6;">🔵</button>
+                        <button onclick="colorClicked('green')" class="btn text-2xl py-8"
+                            style="background: #10b981;">🟢</button>
+                        <button onclick="colorClicked('yellow')" class="btn text-2xl py-8"
+                            style="background: #f59e0b;">🟡</button>
+                        <button onclick="colorClicked('purple')" class="btn text-2xl py-8"
+                            style="background: #8b5cf6;">🟣</button>
+                        <button onclick="colorClicked('orange')" class="btn text-2xl py-8"
+                            style="background: #f97316;">🟠</button>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button onclick="startColorMatch()" class="btn">Start Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chess Game -->
+    <div id="chess-game" class="game-container">
+        <div class="max-w-2xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Chess</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="text-lg mb-4">Current Turn: <span id="chess-turn" class="font-bold">White</span></div>
+                </div>
+
+                <div id="chess-board" class="chess-board mb-6"></div>
+
+                <div class="text-center">
+                    <button onclick="initChess()" class="btn">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solitaire Game -->
+    <div id="solitaire-game" class="game-container">
+        <div class="max-w-4xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Solitaire</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="solitaire-moves">0</div>
+                            <div class="text-sm opacity-70">Moves</div>
+                        </div>
+                        <div>
+                            <button onclick="initSolitaire()" class="btn">New Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="solitaire-board" class="solitaire-board mb-6"></div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70">Drag cards to move them between piles</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mahjong Game -->
+    <div id="mahjong-game" class="game-container">
+        <div class="max-w-3xl mx-auto p-4">
+            <div class="glass p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Mahjong</h2>
+                    <button onclick="showHome()" class="btn-secondary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+
+                <div class="text-center mb-6">
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <div class="text-2xl font-bold" id="mahjong-pairs">0</div>
+                            <div class="text-sm opacity-70">Pairs Found</div>
+                        </div>
+                        <div>
+                            <button onclick="initMahjong()" class="btn">New Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mahjong-board" class="mahjong-board mb-6"></div>
+
+                <div class="text-center">
+                    <div class="text-sm opacity-70">Click matching tiles to remove them</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
