@@ -1,78 +1,99 @@
+<p align="center">
+  <img src="photos/logo.jpg" alt="ArcadeX Logo" width="400">
+</p>
+
 # ArcadeX - Mini Games Collection
 
-ArcadeX is a sleek mini-games collection built with modern web technologies. This project features a unified interface for 12 different games, all designed with a consistent "Glassmorphism" aesthetic and a **dynamic theme system** supporting both light and dark modes.
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
+
+ArcadeX is a sleek, modern mini-games collection built with pure web technologies. Offering a unified interface for 12 different games, it features a consistent **Glassmorphism** aesthetic and a **dynamic theme system** supporting both light and dark modes.
+
+---
+
+## 🚀 Live Demo
+
+[Visit ArcadeX Live](https://lezinsaajid.github.io/ArcadeX/)
+
+---
+
+## 🔥 Key Features
+
+- **Glassmorphism UI**: High-end, transparent, and blurry aesthetic for a premium feel.
+- **Dynamic Themes**: Seamlessly toggle between Light and Dark modes.
+- **Unified Experience**: Quick access to 12 different games from a single dashboard.
+- **Zero-Dependency**: No installation or build process required; just open and play!
+
+---
 
 ## 🕹️ Featured Games
 
-### 1. Tic-Tac-Toe
-The classic X vs O game. Features a smart single-player AI and a local two-player mode.
+### 🧠 Logic & Puzzles
+- **Sudoku**: The classic Japanese number puzzle (9x9 grid).
+- **2048**: Slide and combine tiles to reach the 2048 goal.
+- **Sliding Puzzle**: Rearrange numbered tiles into their correct order.
+- **Memory Match**: Test your concentration by finding matching pairs.
 
-### 2. Grow Your Snake
-A modern take on the classic Snake game. Eat food to grow longer, but don't hit the walls!
+### ⚡ Reflex & Speed
+- **Click Speed Test**: Measure your Clicks Per Second (CPS) in 10 seconds.
+- **Whack A Mole**: Test your speed and accuracy against moles!
+- **Grow Your Snake**: The iconic snake game with a modern twist.
+- **Rock Paper Scissors**: AI-driven classic hand-game duel.
 
-### 3. Memory Match
-Test your concentration by flipping tiles to find matching pairs in the shortest time and moves.
-
-### 4. Bouncy Ball (Flappy Bird style)
-Test your reflexes by navigating a bouncy ball through a series of pipes.
-
-### 5. Click Speed Test
-How fast can you click? Find out your Clicks Per Second (CPS) in this 10-second challenge.
-
-### 6. Whack A Mole
-The ultimate test of speed and accuracy! Hit as many moles as you can within 30 seconds.
-
-### 7. 2048
-The addictive number puzzle. Slide tiles to combine them and reach the 2048 tile.
-
-### 8. Sliding Puzzle
-Rearrange the numbered tiles into their correct order by sliding them into empty spaces.
-
-### 9. Sudoku
-The classic Japanese number puzzle. Fill the 9x9 grid with numbers 1-9 without repeating them in any row, column, or 3x3 box.
-
-### 10. Rock Paper Scissors
-Step up against our AI in a classic hand-game duel. Track your wins, losses, and ties.
-
-### 11. Guess the Number
-A logic-based guessing game. Find the secret number between 1 and 100 with helpful "Higher" or "Lower" hints.
-
-### 12. Color Match
-A sequence-based memory game. Watch the colors flash and repeat them back correctly to level up.
+### 🎮 Arcade & Luck
+- **Bouncy Ball**: Flappy-style reflex challenge through pipes.
+- **Color Match**: Sequence-based memory game with flashing colors.
+- **Guess the Number**: Logic-based guessing game with "Higher/Lower" hints.
+- **Tic-Tac-Toe**: Smart single-player AI or local two-player mode.
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Built With
 
-To run ArcadeX locally, simply duplicate this repository and open `index.html` in any modern web browser.
-
-No installation or build process is required!
-
----
-
-## � Live Demo
-
-Check out the games live at: [https://lezinsaajid.github.io/ArcadeX/](https://lezinsaajid.github.io/ArcadeX/)
-
----
-
-## �🛠️ Built With
-
-- **HTML5**: Structured with semantic elements.
-- **CSS3**: Styled using **Tailwind CSS** and custom CSS for the premium glassmorphism effect.
-- **Vanilla JavaScript**: All game logic and UI interactions are handled with pure JS.
-- **Font Awesome**: Icons for the UI elements.
+- **HTML5**: Semantic and accessible document structure.
+- **CSS3**: Custom glassmorphism effects and Tailwind CSS styling.
+- **Vanilla JavaScript**: Pure, performance-first logic for all games and UI.
+- **Font Awesome**: High-quality icons throughout the interface.
 
 ---
 
 ## 🖼️ Visuals
 
-*(Screenshots of the ArcadeX interface)*
+<p align="center">
+  <img src="photos/Screenshot 2026-03-01 at 19.37.22.png" width="800" alt="ArcadeX Home Screen Dark Mode">
+  <br>
+  <i>Home Screen - Dark Mode</i>
+</p>
 
-![ArcadeX Home Screen 1](photos/Screenshot%202026-03-01%20at%2019.37.22.png)
-![ArcadeX Home Screen 2](photos/Screenshot%202026-03-01%20at%2019.37.40.png)
-![ArcadeX Home Screen 3](photos/Screenshot%202026-03-01%20at%2019.37.51.png)
+<p align="center">
+  <img src="photos/Screenshot 2026-03-01 at 19.37.51.png" width="800" alt="Game Selection Grid">
+  <br>
+  <i>Game Selection Interface</i>
+</p>
+
+<p align="center">
+  <img src="photos/Screenshot 2026-03-01 at 19.37.40.png" width="800" alt="ArcadeX Home Screen Light Mode">
+  <br>
+  <i>Home Screen - Light Mode</i>
+</p>
 
 ---
 
-Designed for a premium gaming experience.
+## 🏁 Getting Started
+
+To run ArcadeX locally:
+
+1.  Clone this repository:
+    ```bash
+    git clone https://github.com/lezinsaajid/ArcadeX.git
+    ```
+2.  Open `index.html` in any modern web browser.
+
+---
+
+<p align="center">
+  Designed for a premium gaming experience. 🕹️✨
+</p>
